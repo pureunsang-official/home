@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 검색 엔진 최적화 (SEO) -->
+    <title>푸른상 건어물 - 신선한 바다의 맛, 믿을 수 있는 품질</title>
+    <meta name="description" content="전통시장 5일장 기반의 신뢰할 수 있는 건어물 전문 도매업체 푸른상 건어물입니다. 멸치, 오징어, 김 등 최상의 품질을 약속드립니다.">
+
+    <!-- 구글 폰트 (나눔고딕) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 헤더 섹션: 로고와 네비게이션 -->
+    <header class="header">
+        <div class="container header-container">
+            <h1 class="logo">
+                <a href="#home">푸른상 건어물</a>
+            </h1>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#about">회사소개</a></li>
+                    <li><a href="#products">취급상품</a></li>
+                    <li><a href="#contact">연락처/문의</a></li>
+                </ul>
+                <!-- 모바일 메뉴 버튼 -->
+                <button class="menu-toggle" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 모바일 메뉴 오버레이 -->
+    <div class="mobile-menu">
+        <button class="close-menu" aria-label="메뉴 닫기">&times;</button>
+        <ul>
+            <li><a href="#about" class="mobile-link">회사소개</a></li>
+            <li><a href="#products" class="mobile-link">취급상품</a></li>
+            <li><a href="#contact" class="mobile-link">연락처/문의</a></li>
+        </ul>
+    </div>
+
+    <!-- 메인 배너 섹션 -->
+    <section class="hero" id="home">
+        <!-- 배경 이미지는 CSS(style.css)의 .hero 클래스에서 수정 가능합니다 -->
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h2 class="slide-up">신선한 바다의 맛,<br>믿을 수 있는 품질</h2>
+            <p class="slide-up delay-1">전통의 가치를 담아 최고의 건어물을 식탁으로 전해드립니다.</p>
+            <a href="#products" class="btn btn-primary slide-up delay-2">상품 둘러보기</a>
+        </div>
+    </section>
+
+    <!-- 회사 소개 섹션 -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h3>회사 소개</h3>
+                <p>30년 전통, 신뢰 하나로 지켜온 푸른상 건어물입니다.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card fade-in">
+                    <div class="icon">🌊</div>
+                    <h4>전통시장 5일장 기반</h4>
+                    <p>현장에서 직접 고객과 소통하며 쌓아온 안목으로 가장 신선하고 맛있는 시기의 상품을 엄선합니다.</p>
+                </div>
+                <div class="about-card fade-in delay-1">
+                    <div class="icon">🤝</div>
+                    <h4>도소매 전문</h4>
+                    <p>소량 구매 고객부터 대량 납품이 필요한 사업자 고객까지, 맞춤형 가격과 서비스로 모십니다.</p>
+                </div>
+                <div class="about-card fade-in delay-2">
+                    <div class="icon">🚚</div>
+                    <h4>검증된 납품 실적</h4>
+                    <p>주변 유명 맛집과 식당에 꾸준히 납품하며 품질을 인정받았습니다. 믿고 드실 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 취급 상품 섹션 -->
+    <section class="section products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h3>대표 취급 상품</h3>
+                <p>바다의 신선함을 그대로 말렸습니다.</p>
+            </div>
+            <div class="product-grid">
+                <!-- 상품 카드 1 -->
+                <div class="product-card fade-in">
+                    <!-- 이미지 경로: images/ 폴더 안에 파일을 넣고 경로를 수정하세요 -->
+                    <div class="product-image" style="background-image: url('images/dried_squid.webp');"></div>
+                    <div class="product-info">
+                        <h4>마른 오징어</h4>
+                        <p>씹을수록 고소하고 감칠맛이 넘치는 동해안 오징어입니다.</p>
+                    </div>
+                </div>
+                <!-- 상품 카드 2 -->
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background-image: url('images/dried_pollack.webp');"></div>
+                    <div class="product-info">
+                        <h4>북어 / 황태</h4>
+                        <p>해장국 재료로 으뜸, 깊고 시원한 국물 맛을 냅니다.</p>
+                    </div>
+                </div>
+                <!-- 상품 카드 3 -->
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background-image: url('images/anchovy.webp');"></div>
+                    <div class="product-info">
+                        <h4>멸치 (국물용/볶음용)</h4>
+                        <p>용도별 최상급 멸치. 신선한 품질로 은빛이 살아있습니다.</p>
+                    </div>
+                </div>
+                <!-- 상품 카드 4 -->
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background-image: url('images/kelp.webp');"></div>
+                    <div class="product-info">
+                        <h4>다시마 / 미역</h4>
+                        <p>깨끗한 바다에서 채취하여 자연 건조했습니다.</p>
+                    </div>
+                </div>
+                <!-- 상품 카드 5 -->
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background-image: url('images/laver.webp');"></div>
+                    <div class="product-info">
+                        <h4>김 / 곱창김</h4>
+                        <p>바삭하고 향긋한 바다 내음이 가득한 프리미엄 김입니다.</p>
+                    </div>
+                </div>
+                <!-- 상품 카드 6 -->
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background-image: url('images/dried_shrimp.webp');"></div>
+                    <div class="product-info">
+                        <h4>건새우 / 홍합</h4>
+                        <p>요리의 풍미를 더해주는 천연 조미료 역할을 합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 연락처 및 문의 섹션 -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info fade-in">
+                    <h3>연락처 및 문의</h3>
+                    <p>궁금하신 점이나 주문 문의는 언제든 환영합니다.</p>
+
+                    <ul class="contact-list">
+                        <!-- 연락처 수정 부분 -->
+                        <li>
+                            <span class="label">전화번호</span>
+                            <a href="tel:010-2303-3599" class="value">010-2303-3599</a>
+                        </li>
+                        <li>
+                            <span class="label">이메일</span>
+                            <span class="value">pureunsang.official@gmail.com</span>
+                        </li>
+                        <li>
+                            <span class="label">주소</span>
+                            <span class="value">서울시 강동구 아리수로 91길 32, B102</span>
+                        </li>
+                        <li>
+                            <span class="label">운영시간</span>
+                            <span class="value">매일 08:00 - 20:00</span>
+                        </li>
+                    </ul>
+
+                    <div class="contact-actions">
+                        <!-- 카카오톡 채널 링크: 실제 ID가 있으면 수정해주세요. 현재는 예시 링크입니다. -->
+                        <a href="http://pf.kakao.com/_CaxnRX" target="_blank" class="btn btn-kakao">카카오톡 문의하기</a>
+                        <a href="tel:010-2303-3599" class="btn btn-outline">전화 걸기</a>
+                    </div>
+                </div>
+                <!-- 5일장 정보 섹션 (지도 대신) -->
+                <div class="market-info fade-in delay-1">
+                    <h3>5일장 정보</h3>
+                    <p class="market-sub-text">푸른상 건어물은 5일장을 순회하며 고객님을 찾아갑니다.</p>
+                    <div class="market-box">
+                        <ul class="market-schedule">
+                            <li>
+                                <span class="market-date">0, 5일</span>
+                                <span class="market-name">용문시장</span>
+                            </li>
+                            <li>
+                                <span class="market-date">1, 6일</span>
+                                <span class="market-name">양수리시장</span>
+                            </li>
+                            <li>
+                                <span class="market-date">2, 7일</span>
+                                <span class="market-name">능곡시장</span>
+                            </li>
+                            <li>
+                                <span class="market-date">3, 8일</span>
+                                <span class="market-name">양평시장</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">푸른상 건어물</div>
+                <p class="copyright">
+                    &copy; 2026 푸른상 건어물. All rights reserved.<br>
+                    사업자등록번호: 144-06-02483 | 대표: 이호윤
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 맨 위로 이동 버튼 -->
+    <a href="#home" class="scroll-top-btn" aria-label="맨 위로 이동">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </a>
+
+    <!-- 자바스크립트 연결 -->
+    <script src="script.js"></script>
+</body>
+
+</html>

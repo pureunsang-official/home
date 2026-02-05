@@ -1,0 +1,666 @@
+/* =========================================
+   기본 설정 (Variables & Reset)
+   ========================================= */
+:root {
+    /* 색상 팔레트 */
+    --primary-color: #1E88E5;
+    /* 바다 파란색 */
+    --primary-dark: #1565C0;
+    /* 진한 파란색 (호버용) */
+    --accent-color: #FFB74D;
+    /* 따뜻한 강조색 (모래/건어물 색) */
+    --text-color: #333333;
+    /* 기본 텍스트 */
+    --text-light: #666666;
+    /* 연한 텍스트 */
+    --bg-light: #F9FAFB;
+    /* 배경색 (아주 연한 회색) */
+    --white: #FFFFFF;
+
+    /* 폰트 */
+    --font-main: 'Noto Sans KR', sans-serif;
+
+    /* 레이아웃 */
+    --container-width: 1200px;
+    --header-height: 70px;
+
+    /* 애니메이션 */
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+/* =========================================
+   유틸리티 (Utilities)
+   ========================================= */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* 버튼 스타일 */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 136, 229, 0.3);
+}
+
+.btn-kakao {
+    background-color: #FEE500;
+    color: #000000;
+    font-weight: 600;
+}
+
+.btn-kakao:hover {
+    background-color: #FDD835;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+    margin-left: 10px;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* =========================================
+   헤더 (Header)
+   ========================================= */
+.header {
+    background-color: rgba(255, 255, 255, 0.95);
+    height: var(--header-height);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-list a {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.nav-list a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 3px;
+}
+
+/* 모바일 메뉴 오버레이 */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--white);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu ul {
+    text-align: center;
+}
+
+.mobile-menu li {
+    margin: 20px 0;
+}
+
+.mobile-menu a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    background: transparent;
+    color: var(--text-color);
+}
+
+/* =========================================
+   영웅 섹션 (Main Banner)
+   ========================================= */
+.hero {
+    height: 80vh;
+    min-height: 500px;
+    background: url('images/hero.webp') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: var(--header-height);
+}
+
+/* 배경 이미지 없을 때 대비한 기본 그라디언트 (이미지 있으면 가려짐) */
+.hero {
+    background-color: #f0f4f8;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* =========================================
+   회사 소개 (About)
+   ========================================= */
+.about {
+    background-color: var(--white);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.about-card {
+    background-color: var(--bg-light);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.about-card .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.about-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.about-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   취급 상품 (Products)
+   ========================================= */
+.products {
+    background-color: #F8FBFE;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+    cursor: default;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 25px;
+}
+
+.product-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.product-info p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+/* =========================================
+   연락처 (Contact)
+   ========================================= */
+.contact {
+    background-color: var(--white);
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    padding-left: 20px;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.contact-info>p {
+    margin-bottom: 30px;
+    color: var(--text-light);
+}
+
+.contact-list {
+    margin-bottom: 40px;
+}
+
+.contact-list li {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: baseline;
+}
+
+.contact-list .label {
+    width: 100px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.contact-list .value {
+    color: var(--text-light);
+    flex: 1;
+}
+
+.contact-map {
+    flex: 1;
+    min-width: 300px;
+    height: 400px;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* =========================================
+   푸터 (Footer)
+   ========================================= */
+.footer {
+    background-color: #333;
+    color: #aaa;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-logo {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+/* =========================================
+   애니메이션 (Animations)
+   ========================================= */
+/* 아래에서 위로 슬라이드 */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up {
+    animation: slideUp 1s ease forwards;
+    opacity: 0;
+}
+
+/* 페이드 인 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    /* JS로 클래스 추가 시 보이도록 할 예정 */
+}
+
+/* 딜레이 유틸리티 */
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+/* =========================================
+   모바일 반응형 (Responsive)
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-map {
+        height: 300px;
+    }
+
+    .btn-outline {
+        margin-left: 0;
+        margin-top: 10px;
+        display: inline-block;
+    }
+}
+
+/* 5일장 정보 스타일 */
+.contact-map {
+    display: none;
+}
+
+.market-info {
+    flex: 1;
+    min-width: 300px;
+    padding-top: 5px;
+    padding-right: 20px;
+}
+
+.market-info h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.market-sub-text {
+    color: var(--text-light);
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.market-box {
+    background-color: var(--bg-light);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+}
+
+.market-schedule {
+    list-style: none;
+    padding: 0;
+}
+
+.market-schedule li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.market-schedule li:last-child {
+    border-bottom: none;
+}
+
+.market-date {
+    font-weight: 700;
+    color: var(--primary-color);
+    background-color: #E3F2FD;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.market-name {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .market-box {
+        padding: 20px;
+    }
+
+    .contact-info {
+        padding-left: 0;
+    }
+
+    .market-info {
+        padding-right: 0;
+    }
+}
+/* 맨 위로 이동 버튼 */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
