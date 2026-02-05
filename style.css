@@ -155,11 +155,21 @@ button {
     height: 100%;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
 .logo a {
+    display: inline-block;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
     letter-spacing: -0.5px;
+    line-height: 1;
+    /* 수직 정렬 보정: 텍스트 높이 여백 제거 */
+    padding-top: 3px;
+    /* 시각적 중앙 보정 (미세 조정) */
 }
 
 .nav-list {
@@ -632,6 +642,7 @@ button {
         padding-right: 0;
     }
 }
+
 /* 맨 위로 이동 버튼 */
 .scroll-top-btn {
     position: fixed;
@@ -650,7 +661,7 @@ button {
     visibility: hidden;
     transform: translateY(20px);
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .scroll-top-btn.show {
@@ -662,5 +673,5 @@ button {
 .scroll-top-btn:hover {
     background-color: var(--primary-dark);
     transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
