@@ -91,7 +91,10 @@ button {
 
 /* 버튼 스타일 */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     padding: 12px 30px;
     border-radius: 50px;
     font-weight: 500;
@@ -121,11 +124,21 @@ button {
     transform: translateY(-2px);
 }
 
+.btn-band {
+    background-color: #00CE3A;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.btn-band:hover {
+    background-color: #00B132;
+    transform: translateY(-2px);
+}
+
 .btn-outline {
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
     background: transparent;
-    margin-left: 10px;
 }
 
 .btn-outline:hover {
@@ -441,6 +454,19 @@ button {
     flex: 1;
 }
 
+.contact-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.contact-actions .btn {
+    flex: 1;
+    padding: 12px 10px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
 .contact-map {
     flex: 1;
     min-width: 300px;
@@ -558,10 +584,25 @@ button {
         height: 300px;
     }
 
-    .btn-outline {
-        margin-left: 0;
-        margin-top: 10px;
-        display: inline-block;
+    .contact-actions {
+        gap: 5px;
+        /* 모바일에서는 간격을 더 좁힘 */
+    }
+
+    .contact-actions .btn {
+        padding: 10px 5px;
+        /* 모바일 화면에 한 줄로 들어가도록 패딩 축소 */
+        font-size: 0.8rem;
+        /* 글자 크기 축소 */
+    }
+
+    .contact-actions .btn svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .contact-actions .btn b {
+        font-size: 14px !important;
     }
 }
 
