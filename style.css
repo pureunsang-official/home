@@ -585,24 +585,12 @@ button {
     }
 
     .contact-actions {
-        gap: 5px;
-        /* 모바일에서는 간격을 더 좁힘 */
+        gap: 8px;
     }
 
     .contact-actions .btn {
-        padding: 10px 5px;
-        /* 모바일 화면에 한 줄로 들어가도록 패딩 축소 */
-        font-size: 0.8rem;
-        /* 글자 크기 축소 */
-    }
-
-    .contact-actions .btn svg {
-        width: 14px;
-        height: 14px;
-    }
-
-    .contact-actions .btn b {
-        font-size: 14px !important;
+        padding: 12px 10px;
+        font-size: 0.9rem;
     }
 }
 
